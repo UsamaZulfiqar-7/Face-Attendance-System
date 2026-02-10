@@ -1,54 +1,66 @@
-Face Attendance System (Computer Vision Project)
-📌 Project Overview
+🎯 Face Attendance System (Computer Vision)
 
-This project is a Face Recognition Based Attendance System built using Computer Vision. The system detects faces in real-time using a live camera, recognizes registered students, and automatically marks their attendance in an Excel file along with the current date and time.
 
-🚀 How the System Works
 
-Dataset Setup (Before Running the Project)
 
-There is a folder named dataset in the project directory.
 
-Inside this folder, create a separate folder for each student using their name (e.g., Ali, Ayesha, Usama).
 
-Add multiple clear face images of each student inside their respective folder.
+📌 About the Project
 
-Example folder structure:
+This is a Face Recognition Based Attendance System developed using Computer Vision and Python.
+The system:
 
-dataset/
+Detects faces using a live camera
+
+Recognizes registered students from a local dataset
+
+Automatically marks attendance in an Excel file
+
+Saves Name, Date, and Time of each recognized student
+
+🚫 No dataset is included in this repository for privacy reasons. You must add your own images.
+
+📂 Dataset Structure
+
+A folder named datasets already exists in the project. Inside it, you need to create separate folders for each student and add their images.
+
+Required structure:
+datasets/
+│
 ├── Aliyan/
 │   ├── img1.jpg
 │   ├── img2.jpg
+│
 ├── Noor/
 │   ├── img1.jpg
 │   ├── img2.jpg
+│
 └── Usama/
     ├── img1.jpg
     └── img2.jpg
 
-Training the Model
+👉 Each folder name must be the student's exact name, as this name will be used in the attendance file.
 
-The system reads images from the dataset folder and extracts facial features.
+⚙️ How It Works
 
-These features are stored and used later for recognition.
+1️⃣ The system loads images from the datasets folder
+2️⃣ Extracts face features of each student
+3️⃣ Turns on the live camera
+4️⃣ Detects and recognizes faces in real time
+5️⃣ If matched, attendance is automatically marked
 
-Live Face Detection & Recognition
+📊 Attendance Output
 
-When the camera starts, it detects faces in real-time.
+Attendance is saved in an Excel file:
 
-If the detected face matches a registered student, the system recognizes the name.
+attendance.xlsx
 
-Automatic Attendance Marking
+Example format:
 
-Once a student is recognized, their:
-
-Name
-
-Date
-
-Time
-are automatically recorded in an Excel file (attendance.xlsx).
-
+Name	Date	Time
+Aliyan	2025-02-10	09:15 AM
+Noor	2025-02-10	09:17 AM
+Usama	2025-02-10	09:20 AM
 🛠️ Technologies Used
 
 Python
@@ -57,29 +69,28 @@ OpenCV
 
 NumPy
 
-Face Recognition Library
+face_recognition library
 
 Pandas
 
-Excel for attendance storage
+Excel
 
-📁 Output File
+🚀 How to Run
 
-Attendance is saved in:
+Install dependencies:
 
-attendance.xlsx
+pip install opencv-python numpy pandas face-recognition
 
-Example format:
+Add student images inside:
 
-Name	Date	Time
-Aliyan	2025-02-10	09:15 AM
-Usama	2025-02-10	09:17 AM
-✅ Note
+datasets/
 
-The dataset is not included in this repository for privacy reasons.
+Run the main file:
 
-You must create your own dataset inside the dataset folder as described above.
+python attendance.py
+
+Camera will open and start marking attendance automatically.
 
 👨‍💻 Developed By
 
-[Your Name]
+Rana Usama
